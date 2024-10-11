@@ -1,0 +1,3 @@
+# EditorJS Strapi Plugin
+
+WIP
