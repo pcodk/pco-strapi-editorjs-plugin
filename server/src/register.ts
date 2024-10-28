@@ -3,7 +3,7 @@ import type { Core } from '@strapi/strapi';
 const register = ({ strapi }: { strapi: Core.Strapi }) => {
   // register phase
   strapi.customFields.register({
-    name: "bolla",
+    name: "PCOEditorjs",
     plugin: "pco-strapi-editorjs-plugin",
     type: "richtext",
     inputSize: {

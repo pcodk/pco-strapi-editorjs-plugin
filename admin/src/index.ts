@@ -11,7 +11,7 @@ export default {
   register(app: any) {
     app.addReducers(reducers);
     app.customFields.register({
-      name: 'bolla',
+      name: 'PCOEditorjs',
       pluginId: 'pco-strapi-editorjs-plugin',
       type: 'richtext',
       icon: PluginIcon,

@@ -189,7 +189,7 @@ let EditorjsFieldNew: React.FC<IEditorjsField> = ({
   }, [config]);
 
   return (
-    <div>
+    <EdWrap>
       <SEditor ref={editorContainerRef} />
       <MediaLibComponent
         isOpen={isMediaLibOpen}
@@ -203,13 +203,17 @@ let EditorjsFieldNew: React.FC<IEditorjsField> = ({
         onToggle={mediaLibAttachesToggleFunc}
         allowedTypes={["files"]}
       />
-    </div>
+    </EdWrap>
   );
 };
 
 EditorjsFieldNew = memo(EditorjsFieldNew);
 
 const SEditor = styled.div`
+  width: 100%;
+`;
+
+const EdWrap = styled.div`
   width: 100%;
 `;
 
