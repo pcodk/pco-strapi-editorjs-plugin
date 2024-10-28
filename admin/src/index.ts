@@ -182,6 +182,15 @@ export default {
                   defaultMessage: "Component selector",
                 },
               },
+              {
+                name: "options.nestedList",
+                type: "checkbox",
+                defaultValue: false,
+                intlLabel: {
+                  id: "editorjs.tools.settings.nestedList",
+                  defaultMessage: "Nested List",
+                },
+              },
             ],
           },
           {

@@ -12,6 +12,7 @@ import Quote from "@editorjs/quote";
 import Raw from "@editorjs/raw";
 import Table from "@editorjs/table";
 import Warning from "@editorjs/warning";
+import NestedList from '@editorjs/nested-list';
 // import ComponentSelectorTool from "editorjs-component-selector";
 
 type ToolOptions = {
@@ -29,6 +30,7 @@ type ToolOptions = {
   marker?: boolean;
   delimiter?: boolean;
   inlineCode?: boolean;
+  nestedList?: boolean;
 };
 
 type ToolConfig = {
@@ -46,6 +48,7 @@ type ToolConfig = {
   marker?: any;
   delimiter?: any;
   inlineCode?: any;
+  nestedList?: any;
 };
 
 export const customTools = (options: ToolOptions = {}, config: ToolConfig = {}): {} => {
@@ -158,6 +161,17 @@ export const customTools = (options: ToolOptions = {}, config: ToolConfig = {}):
           },
         }
       : {}),
-
+    ...(options.nestedList
+      ? {
+          nestedList: {
+            class: NestedList,
+            inlineToolbar: true,
+            config: {
+              defaultStyle: 'unordered'
+            },
+            ...(config.nestedList ? config.nestedList : {}),
+          },
+        }
+      : {}),
   };
 };

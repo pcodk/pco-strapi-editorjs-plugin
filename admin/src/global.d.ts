@@ -88,3 +88,8 @@ declare module "@editorjs/image" {
   import Image from "@editorjs/image";
   export = Image;
 }
+
+declare module "@editorjs/nested-list" {
+  import NestedList from "@editorjs/nested-list";
+  export = NestedList;
+}

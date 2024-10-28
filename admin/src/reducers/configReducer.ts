@@ -19,7 +19,7 @@ const initialState = {
     marker: null,
     delimiter: null,
     inlineCode: null,
-    component: null,
+    nestedList: null,
   },
 };
 
