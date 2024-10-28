@@ -6,7 +6,7 @@ import Delimiter from "@editorjs/delimiter";
 import Embed from "@editorjs/embed";
 import InlineCode from "@editorjs/inline-code";
 import LinkTool from "@editorjs/link";
-import List from "@editorjs/list";
+// import List from "@editorjs/list"; // This is the default list tool
 import Marker from "@editorjs/marker";
 import Quote from "@editorjs/quote";
 import Raw from "@editorjs/raw";
@@ -68,7 +68,11 @@ export const customTools = (options: ToolOptions = {}, config: ToolConfig = {}):
     ...(options.list
       ? {
           list: {
-            class: List,
+            class: NestedList,
+            inlineToolbar: true,
+            config: {
+              defaultStyle: 'ordered'
+            },
             ...(config.list ? config.list : {}),
           },
         }
@@ -158,18 +162,6 @@ export const customTools = (options: ToolOptions = {}, config: ToolConfig = {}):
           inlineCode: {
             class: InlineCode,
             ...(config.inlineCode ? config.inlineCode : {}),
-          },
-        }
-      : {}),
-    ...(options.nestedList
-      ? {
-          nestedList: {
-            class: NestedList,
-            inlineToolbar: true,
-            config: {
-              defaultStyle: 'unordered'
-            },
-            ...(config.nestedList ? config.nestedList : {}),
           },
         }
       : {}),

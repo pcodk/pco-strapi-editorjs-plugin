@@ -19,7 +19,6 @@ const initialState = {
     marker: null,
     delimiter: null,
     inlineCode: null,
-    nestedList: null,
   },
 };
 

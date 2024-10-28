@@ -17,6 +17,5 @@ export default {
     attaches: null,
     component: null,
     minHeight: null,
-    nestedList: null,
   },
 };
